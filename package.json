@@ -1,0 +1,11 @@
+{
+  "name": "node.js_class_material",
+  "version": "1.0.0",
+  "description": "My first node application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Laurynas Paliakas",
+  "license": "ISC"
+}
