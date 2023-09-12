@@ -1,1 +1,1 @@
-console.log("Hello");
+console.log("Labas is node");
