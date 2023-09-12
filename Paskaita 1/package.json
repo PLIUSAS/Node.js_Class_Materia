@@ -8,5 +8,12 @@
     "start": "node server.js"
   },
   "author": "Laurynas Paliakas",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "type": "module"
 }
