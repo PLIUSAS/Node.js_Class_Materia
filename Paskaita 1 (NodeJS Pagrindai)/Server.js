@@ -8,6 +8,7 @@
 // ctrl + c - sustabdo terminalo veikima
 
 import express from "express";
+import casual from "casual";
 
 const app = express();
 
@@ -21,3 +22,19 @@ app.get("/test", (req, res) => {
 app.listen(3000, () => {
   console.log("Server running on PORT 3000");
 });
+
+city = [
+  "New York",
+  "Los Angeles",
+  "Chicago",
+  "Houston",
+  "Miami",
+  "San Francisco",
+  "Boston",
+  "Seattle",
+  "Dallas",
+  "Atlanta",
+];
+
+random_city = Math.random(casual.city);
+console.log(random_city);
