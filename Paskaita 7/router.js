@@ -1,5 +1,11 @@
 import express from "express";
-import { createCar, getCar } from "./controllers.js";
+import {
+  DeleteById,
+  createCar,
+  getCar,
+  getCarById,
+  updateById,
+} from "./controllers.js";
 
 const router = express.Router();
 
@@ -7,10 +13,10 @@ router.post("/cars", createCar);
 
 router.get("/cars", getCar);
 
-router.get("/cars/:id");
+router.get("/cars/:id", getCarById);
 
-router.put("/cars/:id");
+router.put("/cars/:id", updateById);
 
-router.delete("/cars/:id");
+router.delete("/cars/:id", DeleteById);
 
 export default router;
