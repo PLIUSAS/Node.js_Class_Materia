@@ -1,3 +1,7 @@
+if (localStorage.getItem("loggedIn") !== "true") {
+  window.location.href = "./login.html";
+}
+
 const HOST = "http://localhost:3000/todo";
 
 const submitForm = document.querySelector("form");
@@ -28,7 +32,8 @@ submitForm.addEventListener("submit", async (e) => {
       const data = await response.json();
       titleInput.value = "";
       descriptionInput.value = "";
-      generateHtml(data);
+
+      generateTodosHtml(data);
     } else {
       alert("Something wrong");
     }
@@ -50,16 +55,18 @@ async function getTodos() {
     alert("Something went wrong");
   }
 }
-function generateHtml(todo) {
+
+function generateTodosHtml(todo) {
   const todoContainer = document.createElement("div");
+
   const title = document.createElement("input");
   title.value = todo.title;
   const description = document.createElement("input");
   description.value = todo.description;
-  const deletebutton = document.createElement("button");
-  deletebutton.textContent = "Delete";
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
 
-  deletebutton.addEventListener("click", async () => {
+  deleteButton.addEventListener("click", async () => {
     if (confirm("Are you sure you want to delete?")) {
       try {
         const response = await fetch(HOST + `/${todo.id}`, {
@@ -75,6 +82,7 @@ function generateHtml(todo) {
       }
     }
   });
+
   const updateButton = document.createElement("button");
   updateButton.textContent = "Update";
 
@@ -82,6 +90,7 @@ function generateHtml(todo) {
     const titleValue = title.value;
     const descriptionValue = description.value;
     try {
+      console.log(todo.id);
       const response = await fetch(HOST + `/${todo.id}`, {
         method: "PUT",
         headers: {
@@ -92,6 +101,7 @@ function generateHtml(todo) {
           description: descriptionValue,
         }),
       });
+
       if (response.ok) {
         alert("Todo update");
       } else {
@@ -102,11 +112,12 @@ function generateHtml(todo) {
     }
   });
 
-  todoContainer.append(title, description, deletebutton, updateButton);
+  todoContainer.append(title, description, deleteButton, updateButton);
 
-  container.appendChild(todoContainer);
+  container.append(todoContainer);
 }
-await getTodos(); // Funkcija skirta paimti informacija
+
+await getTodos();
 todos.forEach((todo) => {
-  generateHtml(todo); // Funkcija skirta sugeneruoti informacija
+  generateTodosHtml(todo);
 });
