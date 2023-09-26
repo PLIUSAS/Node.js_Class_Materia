@@ -23,6 +23,7 @@ app.get("/pets", async (req, res) => {
     res.json({ error: error.message });
   }
 });
+
 app.post("/pets", async (req, res) => {
   const { name, type, age } = req.body;
   try {
