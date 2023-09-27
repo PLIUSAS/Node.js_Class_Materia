@@ -11,6 +11,14 @@ export async function getCategory(req, res) {
     res.status(500).json({ error: error.message });
   }
 }
+export async function createCategory(req, res) {
+  const { title, description } = req.body;
+  try {
+    const categories = new Categories({ title, description });
+    await categories.save();
+    res.status(201).json(categories);
+  } catch (error) {}
+}
 
 export async function getProduct(req, res) {
   const { name, price } = req.body;
@@ -21,13 +29,23 @@ export async function getProduct(req, res) {
     res.status(500).json({ error: error.message });
   }
 }
+export async function createProduct(req, res) {
+  const { name, price } = req.body;
+  try {
+    const products = new Products({ name, price });
+    await products.save();
+    res.status(201).json(products);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
 export async function addProductsToCategory(req, res) {
   const { productId, categoryId } = req.params;
   try {
-    const categories = await Categories.findById(categoryId);
+    const categori = await Categories.findById(categoryId);
     const productMongoId = new mongoose.Types.ObjectId(productId);
-    categories.products.push(productMongoId);
-    await categories.save();
+    categori.products.push(productMongoId);
+    await categori.save();
 
     const product = await Products.findById(productId);
     const categoriesMongoId = new mongoose.Types.ObjectId(categoryId);

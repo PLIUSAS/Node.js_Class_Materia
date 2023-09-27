@@ -1,6 +1,8 @@
 import express from "express";
 import {
   addProductsToCategory,
+  createCategory,
+  createProduct,
   getCategory,
   getProduct,
   getProductToCategory,
@@ -8,6 +10,8 @@ import {
 
 const router = express.Router();
 
+router.post("/products", createProduct);
+router.post("/categories", createCategory);
 router.get("/categories", getCategory);
 router.get("/products", getProduct);
 router.post(
