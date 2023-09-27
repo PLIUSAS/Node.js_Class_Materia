@@ -1,3 +1,6 @@
+const response = await fetch("http://localhost:3000/pets")
+  .then((response) => response.json())
+  .then((data) => dataDisplay(data));
 function dataDisplay(data) {
   const table = document.querySelector("tbody");
   table.innerHTML = "";
@@ -14,10 +17,6 @@ function dataDisplay(data) {
     td1.textContent = pet.age;
   });
 }
-
-fetch("http://localhost:3000/pets")
-  .then((response) => response.json())
-  .then((data) => dataDisplay(data));
 
 document.getElementById("age").addEventListener("click", (e) => {
   const text = e.target.textContent;

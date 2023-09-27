@@ -1,12 +1,12 @@
 import Categories from "./models/categories.js";
-import products from "./models/products.js";
+import Products from "./models/products.js";
 import mongoose from "mongoose";
 
 export async function getCategory(req, res) {
   const { title, description } = req.body;
   try {
-    const categorie = await Categories.find();
-    res.json(categorie);
+    const categories = await Categories.find();
+    res.json(categories);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -15,28 +15,32 @@ export async function getCategory(req, res) {
 export async function getProduct(req, res) {
   const { name, price } = req.body;
   try {
-    const product = await products.find();
+    const product = await Products.find();
     res.json(product);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 }
-
-export async function getProductCategoryvalue(req, res) {
-  const categoryValues = {};
-
+export async function addProductsToCategory(req, res) {
+  const { productId, categoryId } = req.params;
   try {
-    products.forEach((products) => {
-      const { Categories, price } = products;
-      if (categoryValues[Categories]) {
-        categoryValues[Categories] += price;
-      } else {
-        categoryValues[category] = price;
-      }
-      res.json(categoryValues);
-    });
+    const categories = await Categories.findById(categoryId);
+    const productMongoId = new mongoose.Types.ObjectId(productId);
+    categories.products.push(productMongoId);
+    await categories.save();
 
-    res.json(categoryValues);
+    const product = await Products.findById(productId);
+    const categoriesMongoId = new mongoose.Types.ObjectId(categoryId);
+    product.categories = categoriesMongoId;
+    await product.save();
+
+    res.json({ message: "Product added to category" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
+export async function getProductToCategory(req, res) {
+  try {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
