@@ -23,8 +23,17 @@ header h4 {
 }
 
 main {
-  background-color: lightgray;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(231, 250, 255, 1) 0%,
+    rgba(233, 252, 255, 1) 100%
+  );
   padding: 20px 50px;
+}
+main h2 {
+  color: black;
 }
 
 .inner-cont {
@@ -33,9 +42,11 @@ main {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  color: black;
 }
 .inner-cont h1 {
   margin: 10px 0;
+  color: black;
 }
 .inner-cont p {
   font-size: 0.8rem;
@@ -59,6 +70,9 @@ main {
   flex-wrap: wrap;
   max-width: 100%;
   gap: 20px;
+}
+#membershipSection i {
+  cursor: pointer;
 }
 
 .membership-container {

@@ -33,13 +33,13 @@ function addDataToHtml(data) {
   const i = document.createElement("i");
   i.classList.add("fa-solid", "fa-trash");
   i.id = data._id;
-  // console.log(data._id);
   i.addEventListener("click", async () => {
     try {
-      const response = await fetch(HOST + "/memberships" + i.id, {
+      const response = await fetch(HOST + "/memberships/" + i.id, {
         method: "DELETE",
       });
       if (response.ok) {
+        alert("Membership successfully deleted");
         container.remove();
       } else {
         console.log("Kazkokia klaida");
