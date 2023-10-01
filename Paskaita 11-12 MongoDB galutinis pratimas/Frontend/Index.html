@@ -10,14 +10,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="Index.css" />
+    <link rel="stylesheet" href="style.css" />
     <script src="Index.js" type="module" defer></script>
     <title>Document</title>
   </head>
   <body>
     <header>
-      <button id="MembershipsButton">Memberships</button>
-      <button id="UsersButton">Users</button>
+      <button id="MembershipsButton">
+        <a href="Index.html">Memberships</a>
+      </button>
+      <button id="UsersButton"><a href="add.html">Users</a></button>
     </header>
     <section id="text-and-button">
       <div>
@@ -28,17 +30,11 @@
         </p>
       </div>
 
-      <button id="Submit"><span>+</span> New Membership</button>
+      <button>
+        <span>+</span><a href="NewMembership.html"> New Membership</a>
+      </button>
     </section>
-    <section id="Memberships">
-      <div class="card">
-        <h3><span>$ 1,99</span> Trial</h3>
-        <p>This is 2 days membership</p>
-        <div>
-          <span><i class="fa-solid fa-trash" style="color: #ff0000"></i></span>
-        </div>
-      </div>
-    </section>
+    <section id="Memberships"></section>
     <footer>
       <p>Copyright &copy;2021 Membership Manager</p>
     </footer>

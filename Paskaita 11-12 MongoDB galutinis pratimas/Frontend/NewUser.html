@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="NewUser.js" type="module" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <button id="MembershipsButton">
+        <a href="Index.html">Memberships</a>
+      </button>
+      <button id="UsersButton"><a href="add.html">Users</a></button>
+    </header>
+    <section id="text-and-button">
+      <div>
+        <h1>Create Users</h1>
+      </div>
+    </section>
+    <section id="NewUsers">
+      <table>
+        <label for="name" id="name-label">First Name:</label>
+        <input type="text" id="name" placeholder="First Name" />
+        <label for="surname" id="surname-label">Last Name:</label>
+        <input type="text" id="surname" placeholder="Last Name" />
+        <br />
+        <label for="email" id="email-label">Email Address:</label>
+        <input type="email" id="email" placeholder="Email Address" />
+        <br />
+        <label for="Membership-name" id="Membershipname-label"
+          >Change Memberships:</label
+        >
+        <select id="Memberships-name">
+          <option value="Trial">Trial</option>
+          <option value="Silver">Silver</option>
+          <option value="Bronze">Bronze</option>
+          <option value="Gold">Gold</option>
+          <option value="Platinum">Platinum</option>
+        </select>
+      </table>
+      <button id="Cancel">Cancel</button>
+      <button type="submit" id="submit">New User</button>
+    </section>
+    <footer>
+      <p>Copyright &copy;2021 Membership Manager</p>
+    </footer>
+  </body>
+</html>

@@ -11,7 +11,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="add.js" type="module" defer></script>
+    <script src="NewMemberships.js" type="module" defer></script>
     <title>Document</title>
   </head>
   <body>
@@ -23,26 +23,23 @@
     </header>
     <section id="text-and-button">
       <div>
-        <h2>User Management</h2>
+        <h1>Create Membership</h1>
       </div>
-
-      <button><span>+</span><a href="NewUser.html"> New User</a></button>
     </section>
-    <div class="Sorting">
-      <h3>
-        Sorting By Name: ASC
-        <span
-          ><button><i class="fa-solid fa-sort"></i></button
-        ></span>
-      </h3>
-    </div>
-    <section id="Users">
-      <div class="users-card">
-        <h4>Andrew Burns</h4>
-        <p>Email Address:</p>
-        <p>Membership</p>
-        <p>ip:</p>
-      </div>
+    <section id="NewMemberships">
+      <table>
+        <label for="name" id="name-label">Name: </label>
+        <input type="text" id="name" placeholder="Name" />
+        <br />
+        <label for="price" id="Membership-label">Membership Price: </label>
+        <input type="number" id="price" placeholder=" $ | Membership Price" />
+        <br />
+        <label for="description" id="Description-label">Description: </label>
+        <input type="text" id="description" placeholder="Description" />
+        <br />
+        <button id="Cancel">Cancel</button>
+        <button id="submit">New Membership</button>
+      </table>
     </section>
     <footer>
       <p>Copyright &copy;2021 Membership Manager</p>
