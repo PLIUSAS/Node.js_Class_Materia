@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+header a {
+  text-decoration: none;
+  padding: 10px 30px;
+  color: grey;
+  margin-bottom: 0;
+}
+header h4 {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+.color-blue {
+  color: #0065fc;
+}
+
+main {
+  background-color: lightgray;
+  padding: 20px 50px;
+}
+
+.inner-cont {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.inner-cont h1 {
+  margin: 10px 0;
+}
+.inner-cont p {
+  font-size: 0.8rem;
+}
+
+.button {
+  background-color: rgba(101, 10, 185, 0.651);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+#membershipSection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  gap: 20px;
+}
+
+.membership-container {
+  display: flex;
+  width: 30%;
+  max-width: 33%;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+}
+.membership-container h5 {
+  text-align: center;
+  margin: 20px 0 5px 0;
+  font-size: 1.5rem;
+}
+.membership-container p {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 0.7rem;
+}
+.membership-container div i {
+  /* text-align: right; */
+  color: red;
+  margin: 10px 10px;
+  padding: 5px;
+  background-color: lightgray;
+}
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 5px;
+}
+.membership-container div {
+  border-bottom: 1px solid lightgray;
+  width: 100%;
+}
+
+.box-shadow {
+  box-shadow: 1px 1px 5px 1px rgba(128, 128, 128, 0.432);
+}
+footer {
+  text-align: center;
+  padding: 50px 0 10px 0;
+  font-size: 0.7rem;
+}
+#sortTab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+#sortTab p {
+  padding-right: 15px;
+}
+#userSection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.user-cont {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: white;
+  width: 32%;
+  padding: 15px;
+}
+.user-cont span {
+  color: blue;
+}
+.user-cont p {
+  margin: 5px 0;
+}
+.user-cont h3 {
+  margin-bottom: 20px;
+}
+#userForm {
+  background-color: white;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  box-shadow: 1px 1px 7px 1px rgba(128, 128, 128, 0.432);
+  margin-bottom: 100px;
+}
+#firstTab {
+  display: flex;
+  flex-direction: column;
+}
+#secondTab {
+  display: flex;
+  flex-direction: column;
+}
+#userForm div:last-child {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  align-items: center;
+}
+#userForm div:last-child a,
+#buttonDiv a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+}
+#userForm label {
+  padding: 10px 0 5px;
+  font-weight: bold;
+}
+
+#userForm select {
+  background-color: white;
+  padding: 5px;
+  box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.432);
+  border: none;
+  width: 55%;
+}
+#userForm input {
+  padding: 5px;
+  box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.432);
+  border: none;
+  margin-bottom: 30px;
+}
+
+#innerService {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  gap: 20px;
+
+  margin-bottom: 10px;
+  align-items: flex-end;
+}
+#serviceForm {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  align-content: center;
+  width: 100%;
+  background-color: white;
+  margin: 20px auto;
+  box-shadow: 1px 1px 7px 1px rgba(128, 128, 128, 0.432);
+}
+
+#innerService input:not(#membershipPrice),
+#serviceForm textarea {
+  width: 450px;
+  /* margin-left: 20px; */
+  padding: 5px;
+  box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.432);
+  border: none;
+}
+#serviceForm label {
+  margin-right: 20px;
+}
+#descriptionDiv {
+  display: flex;
+
+  align-items: center;
+}
+#buttonDiv {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  align-items: center;
+}
+h1,
+h2 {
+  color: rgb(107, 103, 103);
+}
+form {
+  margin-top: 20px;
+}
+#priceDiv {
+  display: flex;
+}
+.inline {
+  display: inline;
+}
+#membershipPrice {
+  border: none;
+  margin-left: 20px;
+  width: 400px;
+}
+#membPrice {
+  box-sizing: border-box;
+  padding: 5px 10px;
+  box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.432);
+  border: none;
+  width: 450px;
+}

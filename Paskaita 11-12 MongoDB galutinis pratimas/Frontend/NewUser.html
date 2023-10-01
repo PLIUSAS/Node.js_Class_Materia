@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="addUser.js" type="module"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -10,48 +18,65 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="style.css" />
-    <script src="NewUser.js" type="module" defer></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <title>Add User</title>
   </head>
   <body>
     <header>
-      <button id="MembershipsButton">
-        <a href="Index.html">Memberships</a>
-      </button>
-      <button id="UsersButton"><a href="add.html">Users</a></button>
+      <a href="./index.html">
+        <h4>Memberships</h4>
+      </a>
+      <a href="./users.html" class="color-blue">
+        <h4>Users</h4>
+      </a>
     </header>
-    <section id="text-and-button">
-      <div>
-        <h1>Create Users</h1>
-      </div>
-    </section>
-    <section id="NewUsers">
-      <table>
-        <label for="name" id="name-label">First Name:</label>
-        <input type="text" id="name" placeholder="First Name" />
-        <label for="surname" id="surname-label">Last Name:</label>
-        <input type="text" id="surname" placeholder="Last Name" />
-        <br />
-        <label for="email" id="email-label">Email Address:</label>
-        <input type="email" id="email" placeholder="Email Address" />
-        <br />
-        <label for="Membership-name" id="Membershipname-label"
-          >Change Memberships:</label
-        >
-        <select id="Memberships-name">
-          <option value="Trial">Trial</option>
-          <option value="Silver">Silver</option>
-          <option value="Bronze">Bronze</option>
-          <option value="Gold">Gold</option>
-          <option value="Platinum">Platinum</option>
-        </select>
-      </table>
-      <button id="Cancel">Cancel</button>
-      <button type="submit" id="submit">New User</button>
-    </section>
-    <footer>
-      <p>Copyright &copy;2021 Membership Manager</p>
-    </footer>
+
+    <main>
+      <h2>Create User</h2>
+      <form id="userForm">
+        <div id="firstTab">
+          <label for="firstName">First Name *</label>
+          <input
+            type="text"
+            name=""
+            id="firstName"
+            required
+            placeholder="First Name"
+          />
+          <label for="email">Email Address *</label>
+          <input
+            type="text"
+            name=""
+            id="email"
+            required
+            placeholder="Email Address"
+          />
+
+          <label for="membership">Change Membership</label>
+          <select name="" id="membership">
+            <option value="Platinum">Platinum</option>
+            <option value="Platinum2">Platinum2</option>
+            <option value="Platinum3">Platinum3</option>
+            <option value="Platinum4">Platinum4</option>
+          </select>
+        </div>
+        <div id="secondTab">
+          <label for="lastName">Last Name *</label>
+          <input
+            type="text"
+            name=""
+            id="lastName"
+            required
+            placeholder="Last Name"
+          />
+        </div>
+
+        <div>
+          <a href="./users.html">Cancel</a>
+          <button class="button" type="submit">New User</button>
+        </div>
+      </form>
+      <footer><p>Copyright © 2021 Membership Manager</p></footer>
+    </main>
   </body>
 </html>

@@ -1,40 +1,54 @@
-const MemberUl = document.querySelector("#Memberships");
-
-async function getMemberships() {
-  MemberUl.innerHTML = "";
+const output = document.querySelector("#membershipSection");
+const HOST = "http://localhost:3000";
+async function getData() {
+  const response = await fetch(HOST + "/memberships");
   try {
-    const response = await fetch("http://localhost:3000/memberships");
     if (response.ok) {
-      const memberships = await response.json();
-      memberships.forEach((membership) => {
-        const cards = document.createElement("div");
-        cards.classList.add("card");
-        const span = document.createElement("span");
-        span.textContent = " $" + membership.price;
-        const h3 = document.createElement("h3");
-        h3.textContent = membership.name;
-        const p = document.createElement("p");
-        p.textContent = membership.description;
-        const div2 = document.createElement("div");
-        const span2 = document.createElement("span");
-        const iconElement = document.createElement("i");
-        iconElement.className = "fa-solid fa-trash";
-        iconElement.style.color = "#ff0000";
-        h3.append(span);
-        span2.append(iconElement);
-        div2.append(span2);
-        cards.append(h3, p, div2);
-        MemberUl.append(cards);
+      const data = await response.json();
+      // console.log(data);
+      output.innerHTML = "";
+      data.forEach((el) => {
+        addDataToHtml(el);
       });
-    } else {
-      alert("Something went wrong");
     }
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 }
-getMemberships();
 
-document
-  .getElementById("MembershipsButton")
-  .addEventListener("click", getMemberships);
+getData();
+
+function addDataToHtml(data) {
+  const container = document.createElement("div");
+  container.classList.add("membership-container", "box-shadow");
+  const h5 = document.createElement("h5");
+  h5.textContent = `$${data.price} ${data.name}`;
+  const p = document.createElement("p");
+  p.textContent = data.description;
+
+  const div1 = document.createElement("div");
+  div1.append(h5, p);
+  const div2 = document.createElement("div");
+  div2.classList.add("flex-end");
+  const i = document.createElement("i");
+  i.classList.add("fa-solid", "fa-trash");
+  i.id = data._id;
+  // console.log(data._id);
+  i.addEventListener("click", async () => {
+    try {
+      const response = await fetch(HOST + "/memberships/" + i.id, {
+        method: "DELETE",
+      });
+      if (response.ok) {
+        container.remove();
+      } else {
+        console.log("Kazkokia klaida");
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  });
+  div2.append(i);
+  container.append(div1, div2);
+  output.append(container);
+}

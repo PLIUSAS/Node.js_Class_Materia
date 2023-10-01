@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="users.js" type="module"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -10,42 +18,78 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="style.css" />
-    <script src="add.js" type="module" defer></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <title>Users Management</title>
   </head>
   <body>
     <header>
-      <button id="MembershipsButton">
-        <a href="Index.html">Memberships</a>
-      </button>
-      <button id="UsersButton"><a href="add.html">Users</a></button>
+      <a href="./index.html">
+        <h4>Memberships</h4>
+      </a>
+      <a href="./users.html" class="color-blue">
+        <h4>Users</h4>
+      </a>
     </header>
-    <section id="text-and-button">
-      <div>
-        <h2>User Management</h2>
-      </div>
 
-      <button><span>+</span><a href="NewUser.html"> New User</a></button>
-    </section>
-    <div class="Sorting">
-      <h3>
-        Sorting By Name: ASC
-        <span
-          ><button><i class="fa-solid fa-sort"></i></button
-        ></span>
-      </h3>
-    </div>
-    <section id="Users">
-      <div class="users-card">
-        <h4>Andrew Burns</h4>
-        <p>Email Address:</p>
-        <p>Membership</p>
-        <p>ip:</p>
-      </div>
-    </section>
-    <footer>
-      <p>Copyright &copy;2021 Membership Manager</p>
-    </footer>
+    <main>
+      <section id="upSection">
+        <div class="inner-cont">
+          <div>
+            <h1>User Management</h1>
+          </div>
+
+          <a href="./NewUser.html" class="button"
+            ><span class="mr-10">+</span> <span>New User</span></a
+          >
+        </div>
+        <div id="sortTab">
+          <p>Sorting By Name: <span id="sortOrder">ASC</span></p>
+          <i id="ascDsc" class="fa-solid fa-sort"></i>
+        </div>
+      </section>
+      <section id="userSection">
+        <!-- fghfg -->
+
+        <div class="user-cont box-shadow">
+          <h3>Vardenis pavardenis</h3>
+          <p>Email Address: <span>jonas@ponas.com</span></p>
+          <p>Membership: <span>Platinum</span></p>
+          <p>id: 1dasdasf4f5ddsf6</p>
+        </div>
+
+        <!-- ffgh -->
+        <div class="user-cont box-shadow">
+          <h3>Vardenis pavardenis</h3>
+          <p>Email Address: <span>jonas@ponas.com</span></p>
+          <p>Membership: <span>Platinum</span></p>
+          <p>id: 1dasdasf4f5ddsf6</p>
+        </div>
+        <div class="user-cont box-shadow">
+          <h3>Vardenis pavardenis</h3>
+          <p>Email Address: <span>jonas@ponas.com</span></p>
+          <p>Membership: <span>Platinum</span></p>
+          <p>id: 1dasdasf4f5ddsf6</p>
+        </div>
+        <div class="user-cont box-shadow">
+          <h3>Vardenis pavardenis</h3>
+          <p>Email Address: <span>jonas@ponas.com</span></p>
+          <p>Membership: <span>Platinum</span></p>
+          <p>id: 1dasdasf4f5ddsf6</p>
+        </div>
+        <div class="user-cont box-shadow">
+          <h3>Vardenis pavardenis</h3>
+          <p>Email Address: <span>jonas@ponas.com</span></p>
+          <p>Membership: <span>Platinum</span></p>
+          <p>id: 1dasdasf4f5ddsf6</p>
+        </div>
+        <div class="user-cont box-shadow">
+          <h3>Vardenis pavardenis</h3>
+          <p>Email Address: <span>jonas@ponas.com</span></p>
+          <p>Membership: <span>Platinum</span></p>
+          <p>id: 1dasdasf4f5ddsf6</p>
+        </div>
+      </section>
+      <footer><p>Copyright © 2021 Membership Manager</p></footer>
+    </main>
   </body>
 </html>

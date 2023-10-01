@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="index.js" type="module"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -10,33 +18,75 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="style.css" />
-    <script src="Index.js" type="module" defer></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <title>Mongo db baigiamasis projektas</title>
   </head>
   <body>
     <header>
-      <button id="MembershipsButton">
-        <a href="Index.html">Memberships</a>
-      </button>
-      <button id="UsersButton"><a href="add.html">Users</a></button>
+      <a href="./index.html" class="color-blue">
+        <h4>Memberships</h4>
+      </a>
+      <a href="./add.html">
+        <h4>Users</h4>
+      </a>
     </header>
-    <section id="text-and-button">
-      <div>
-        <h1>Membership Management</h1>
-        <p>
-          Here you can manage your membership packages. Node:Make sure you are
-          not deleting or deactivating packages assigned to active users.
-        </p>
-      </div>
 
-      <button>
-        <span>+</span><a href="NewMembership.html"> New Membership</a>
-      </button>
-    </section>
-    <section id="Memberships"></section>
-    <footer>
-      <p>Copyright &copy;2021 Membership Manager</p>
-    </footer>
+    <main>
+      <section id="upSection">
+        <div class="inner-cont">
+          <div>
+            <h1>Membership Management</h1>
+            <p>
+              Here you can manage your membership packages. Note: Make sure you
+              are not deleting or deactivating packages assigned to active users
+            </p>
+          </div>
+
+          <a href="./NewMembership.html" class="button"
+            ><span class="mr-10">+</span> <span>New Membership</span></a
+          >
+        </div>
+      </section>
+      <section id="membershipSection">
+        <!-- ddd -->
+        <div class="membership-container box-shadow">
+          <div id="div1">
+            <h5>$1.99 Trial</h5>
+            <p>The 2 days Membership</p>
+          </div>
+          <div class="flex-end div2"><i class="fa-solid fa-trash"></i></div>
+        </div>
+        <!-- hhghg -->
+        <div class="membership-container box-shadow">
+          <div>
+            <h5>$<span>1.99</span> Trial</h5>
+            <p>The 2 days Membership</p>
+          </div>
+          <div class="flex-end"><i class="fa-solid fa-trash"></i></div>
+        </div>
+        <div class="membership-container box-shadow">
+          <div>
+            <h5>$<span class="priceField">1.99</span> Trial</h5>
+            <p>The 2 days Membership</p>
+          </div>
+          <div class="flex-end"><i class="fa-solid fa-trash"></i></div>
+        </div>
+        <div class="membership-container box-shadow">
+          <div>
+            <h5>$<span class="priceField">1.99</span> Trial</h5>
+            <p>The 2 days Membership</p>
+          </div>
+          <div class="flex-end"><i class="fa-solid fa-trash"></i></div>
+        </div>
+        <div class="membership-container box-shadow">
+          <div>
+            <h5>$<span class="priceField">1.99</span> Trial</h5>
+            <p>The 2 days Membership</p>
+          </div>
+          <div class="flex-end"><i class="fa-solid fa-trash"></i></div>
+        </div>
+      </section>
+      <footer><p>Copyright © 2021 Membership Manager</p></footer>
+    </main>
   </body>
 </html>
