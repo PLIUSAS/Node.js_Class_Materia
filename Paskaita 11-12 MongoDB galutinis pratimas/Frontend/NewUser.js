@@ -13,7 +13,8 @@ formSubmit.addEventListener("submit", async (e) => {
 });
 
 button.addEventListener("click", () => {
-  window.location.href = "./users.html";
+  alert("User successfully added");
+  window.location.href = "./add.html";
 });
 
 async function addUser() {
@@ -34,9 +35,10 @@ async function addUser() {
     }),
   });
   if (response.ok) {
-    alert("Userr successfully added");
+    alert("User successfully added");
     const data = await response.json();
-    console.log(data);
+  } else {
+    console.log("Something went wrong");
   }
 }
 

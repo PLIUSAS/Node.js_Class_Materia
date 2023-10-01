@@ -42,7 +42,7 @@ main {
 }
 
 .button {
-  background-color: rgba(101, 10, 185, 0.651);
+  background-color: rgba(0, 4, 250, 0.651);
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -81,7 +81,6 @@ main {
   font-size: 0.7rem;
 }
 .membership-container div i {
-  /* text-align: right; */
   color: red;
   margin: 10px 10px;
   padding: 5px;
@@ -116,6 +115,9 @@ footer {
 #sortTab p {
   padding-right: 15px;
 }
+#sortTab i {
+  cursor: pointer;
+}
 #userSection {
   display: flex;
   justify-content: center;
@@ -125,7 +127,6 @@ footer {
 .user-cont {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   background-color: white;
   width: 32%;
   padding: 15px;
@@ -202,7 +203,6 @@ footer {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
   align-content: center;
   width: 100%;
   background-color: white;
@@ -213,7 +213,6 @@ footer {
 #innerService input:not(#membershipPrice),
 #serviceForm textarea {
   width: 450px;
-  /* margin-left: 20px; */
   padding: 5px;
   box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.432);
   border: none;

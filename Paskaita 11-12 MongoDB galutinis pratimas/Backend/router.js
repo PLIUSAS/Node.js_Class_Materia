@@ -4,6 +4,7 @@ import {
   createUsers,
   deleteMembershipsById,
   getMemberships,
+  getOrderUsers,
   getUsers,
   getUsersByName,
 } from "./controllers.js";
@@ -12,6 +13,7 @@ const router = express.Router();
 
 router.get("/memberships", getMemberships);
 router.get("/users", getUsers);
+router.get("users/:order", getOrderUsers);
 router.get("/users/:name", getUsersByName);
 router.post("/memberships", createMemberships);
 router.post("/users", createUsers);

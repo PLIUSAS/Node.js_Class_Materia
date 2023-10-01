@@ -10,6 +10,7 @@ formSubmit.addEventListener("submit", async (e) => {
   addMembership();
 });
 button.addEventListener("click", () => {
+  alert("Membership successfully added");
   window.location.href = "./index.html";
 });
 
@@ -32,13 +33,11 @@ async function addMembership() {
 
     if (response.ok) {
       const data = await response.json();
-      console.log(data);
+      alert("Membership successfully added");
     } else {
-      console.log("kazkokia klaida");
+      console.log("Something went wrong");
     }
   } catch (error) {
     console.log(error.message);
   }
 }
-
-// ----------

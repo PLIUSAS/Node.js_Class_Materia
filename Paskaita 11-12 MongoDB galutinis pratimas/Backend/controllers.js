@@ -37,6 +37,18 @@ export async function getUsersByName(req, res) {
     res.status(500).json({ message: error.message });
   }
 }
+export async function getOrderUsers(req, res) {
+  const { order } = req.params;
+
+  try {
+    const users = await Users.find({})
+      .populate("service_id")
+      .sort({ name: order });
+    res.status(201).json(users);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
 
 export async function createMemberships(req, res) {
   const { name, price, description } = req.body;
