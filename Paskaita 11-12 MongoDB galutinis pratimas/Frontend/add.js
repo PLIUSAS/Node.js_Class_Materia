@@ -4,7 +4,7 @@ const ascDsc = document.querySelector("#ascDsc");
 const sortOrder = document.querySelector("#sortOrder");
 
 async function getData(order) {
-  const response = await fetch(HOST + `/users/` + order);
+  const response = await fetch(HOST + `/users` + order);
   try {
     if (response.ok) {
       const data = await response.json();

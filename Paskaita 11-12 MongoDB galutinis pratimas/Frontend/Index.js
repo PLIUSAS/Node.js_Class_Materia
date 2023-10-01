@@ -36,7 +36,7 @@ function addDataToHtml(data) {
   // console.log(data._id);
   i.addEventListener("click", async () => {
     try {
-      const response = await fetch(HOST + "/memberships/" + i.id, {
+      const response = await fetch(HOST + "/memberships" + i.id, {
         method: "DELETE",
       });
       if (response.ok) {
