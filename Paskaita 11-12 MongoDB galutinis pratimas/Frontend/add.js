@@ -4,11 +4,11 @@ const ascDsc = document.querySelector("#ascDsc");
 const sortOrder = document.querySelector("#sortOrder");
 
 async function getData(order) {
-  const response = await fetch(HOST + `/users` + order);
+  const response = await fetch(HOST + "/users" + order);
   try {
     if (response.ok) {
       const data = await response.json();
-      //   console.log(data);
+      console.log(data);
       output.innerHTML = "";
       data.forEach((el) => {
         addDataToHtml(el);
@@ -20,21 +20,21 @@ async function getData(order) {
     console.log(error.message);
   }
 }
-getData("1");
+getData();
 
-function addDataToHtml(data) {
+function addDataToHtml(user) {
   const serviceName = data.service_id?.name || "None";
 
   const container = document.createElement("div");
   container.classList.add("user-cont", "box-shadow");
 
   const h3 = document.createElement("h3");
-  h3.textContent = data.name + " " + data.surname;
+  h3.textContent = user.name + " " + user.surname;
 
   const pEmail = document.createElement("p");
   pEmail.textContent = "Email Address: ";
   const spanEmail = document.createElement("span");
-  spanEmail.textContent = data.email;
+  spanEmail.textContent = user.email;
   spanEmail.style.color = "blue";
   pEmail.append(spanEmail);
 
@@ -46,11 +46,11 @@ function addDataToHtml(data) {
   pMembership.append(spanMembership);
 
   const pId = document.createElement("p");
-  pId.textContent = `id: ${data._id}`;
+  pId.textContent = `id: ${user._id}`;
   container.append(h3, pEmail, pMembership, pId);
   output.append(container);
 }
-
+addDataToHtml(data);
 ascDsc.addEventListener("click", () => {
   if (sortOrder.textContent === "ASC") {
     getData("-1");
