@@ -22,8 +22,7 @@ async function getData() {
 getData("1");
 
 function addDataToHtml(data) {
-  const serviceName = data.service_id?.name || "None";
-  console.log(serviceName);
+  const serviceName = data.service_id?.name || "No Membership";
 
   const container = document.createElement("div");
   container.classList.add("user-cont", "box-shadow");

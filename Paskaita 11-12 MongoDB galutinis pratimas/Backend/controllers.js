@@ -40,9 +40,11 @@ export async function getOrderUsers(req, res) {
   const { order } = req.params;
 
   try {
-    const users = await Users.find({ name: order })
-      .populate("service_id")
-      .sort({ name: order });
+    const orderQuery = order === "ASC" ? 1 : -1;
+
+    const users = await Users.find()
+      .sort({ name: orderQuery })
+      .populate("service_id");
     res.status(201).json(users);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -73,13 +75,10 @@ export async function createUsers(req, res) {
       email,
       service_id: serviceMongoId,
     });
-    await newUsers.save();
 
     const service = await Services.findById(service_id);
-    if (!service) {
-      return res.status(404).json({ error: "Service not found" });
-    }
     service.users_id.push(newUsers._id);
+    await newUsers.save();
     await service.save();
     res.status(201).json(newUsers);
   } catch (error) {
