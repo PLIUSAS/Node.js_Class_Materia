@@ -1,4 +1,3 @@
-import services from "./models/services.js";
 import Services from "./models/services.js";
 import Users from "./models/users.js";
 import mongoose from "mongoose";
@@ -41,7 +40,7 @@ export async function getOrderUsers(req, res) {
   const { order } = req.params;
 
   try {
-    const users = await Users.find({})
+    const users = await Users.find({ name: order })
       .populate("service_id")
       .sort({ name: order });
     res.status(201).json(users);
