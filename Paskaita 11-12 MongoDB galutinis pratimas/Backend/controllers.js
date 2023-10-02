@@ -91,6 +91,10 @@ export async function deleteMembershipsById(req, res) {
   const { id } = req.params;
   try {
     const deleted = await Services.findByIdAndDelete(id);
+    const users = await Users.updateMany(
+      { service_id: id },
+      { $unset: { service_id: 1 } }
+    );
     if (deleted) {
       res.json(deleted);
       console.log(`Membership with id ${id} is deleted`);
