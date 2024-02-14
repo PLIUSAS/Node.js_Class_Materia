@@ -4,7 +4,7 @@
 // npm install --save-dev [package pavadinimas] - suinstaliuoja npm package kaip dev dependency
 // npm install -g [package pavadinimas] - suinstaliuoja npm package globaliai
 // nodemon [failo pavadinimas.js] - paleidzia aplikacija
-// npm install - atsiuncia visus package is package.json
+// npm install - atsiuncia visus package is package.json (express,mongoose, dotenv,pg ir t.t)
 // ctrl + c - sustabdo terminalo veikima
 
 import express from "express";
